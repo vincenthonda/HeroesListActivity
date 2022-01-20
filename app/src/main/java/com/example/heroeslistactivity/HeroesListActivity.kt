@@ -4,13 +4,15 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.heroeslistactivity.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.heroeslistactivity.databinding.ActivityHeroesListBinding
+import com.example.heroeslistactivity.databinding.ActivityHeroesDetailBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class HeroesListActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding : ActivityHeroesListBinding
     lateinit var adapter : HeroAdapter
 
     companion object {
@@ -19,9 +21,8 @@ class HeroesListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHeroesListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         // Load the heroes.json into a List<Hero> using Gson
         val inputStream = resources.openRawResource(R.raw.heroes)
@@ -35,8 +36,8 @@ class HeroesListActivity : AppCompatActivity() {
 
         // Create our adapter and fill the recycler view
         adapter = HeroAdapter(heroesList)
-        binding.recyclerView.adapter = adapter
-        binding.recyclerView_heroesList.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewHeroesList.adapter = adapter
+        binding.recyclerViewHeroesList.layoutManager = LinearLayoutManager(this)
 
     }
-}}
+}

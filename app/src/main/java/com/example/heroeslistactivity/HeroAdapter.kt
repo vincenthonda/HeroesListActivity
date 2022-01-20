@@ -8,17 +8,6 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class HeroAdapter {
-    // change CustomAdapter to HeroAdapter
-// change Array<String> to List<Hero>
-// change private val dataset to var dataset so we can do sorting later
-// make sure your ids for the text views are named well...
-// in the ViewHolder inner class, declare your instance variables for your widgets & wire them
-// make sure in onCreateViewHolder to change the layout you inflate to the item layout you made
-// in the onBindViewHolder: given the ViewHolder and the position in the list.
-    // get the the item from the dataset at that position
-    // match up those item's attributes to the various textViews or other widgets in the ViewHolder
-
     class HeroAdapter(var dataSet: List<Hero>) :
         RecyclerView.Adapter<HeroAdapter.ViewHolder>() {
 
@@ -65,4 +54,3 @@ class HeroAdapter {
         // Return the size of your dataset (invoked by the layout manager)
         override fun getItemCount() = dataSet.size
     }
-}
