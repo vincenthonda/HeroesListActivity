@@ -1,9 +1,13 @@
 package com.example.heroeslistactivity
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.heroeslistactivity.databinding.ActivityHeroesListBinding
 import com.example.heroeslistactivity.databinding.ActivityHeroesDetailBinding
@@ -39,5 +43,35 @@ class HeroesListActivity : AppCompatActivity() {
         binding.recyclerViewHeroesList.adapter = adapter
         binding.recyclerViewHeroesList.layoutManager = LinearLayoutManager(this)
 
+
+
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_list_sorting, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.item_sorting_byName -> {
+                adapter.dataSet = adapter.dataSet.sortedBy {
+                    it.name.compareTo("test")
+                }
+                adapter.notifyDataSetChanged()
+                true
+            }
+            R.id.item_sorting_byRank -> {
+                adapter.dataSet = adapter.dataSet.sortedBy {
+                    it.ranking
+                }
+                adapter.notifyDataSetChanged()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }

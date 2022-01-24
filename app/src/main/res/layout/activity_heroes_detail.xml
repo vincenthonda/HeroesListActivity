@@ -4,4 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeroesDetailActivity"/>
+    tools:context=".HeroesDetailActivity">
+
+    <TextView
+        android:id="@+id/textView_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hero Name Here"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_detail_heroPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_detail_descLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_detail_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_detail_heroPic"
+        tools:text="Description:" />
+
+    <TextView
+        android:id="@+id/textView_detail_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description goes here"
+        app:layout_constraintBottom_toTopOf="@+id/textView_detail_superpowerLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_detail_descLabel" />
+
+    <TextView
+        android:id="@+id/textView_detail_superpowerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SuperPower:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_detail_superpower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_detail_desc" />
+
+    <TextView
+        android:id="@+id/textView_detail_superpower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SuperPower goes here"
+        app:layout_constraintBottom_toTopOf="@+id/textView_rankingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_detail_superpowerLabel" />
+
+    <TextView
+        android:id="@+id/textView_rankingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ranking:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_detail_ranking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_detail_superpower" />
+
+    <TextView
+        android:id="@+id/textView_detail_ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ranking goes here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_rankingLabel" />
+
+    <ImageView
+        android:id="@+id/imageView_detail_heroPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView_detail_descLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_detail_name"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>

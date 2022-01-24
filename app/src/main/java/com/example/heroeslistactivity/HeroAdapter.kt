@@ -1,5 +1,6 @@
 package com.example.heroeslistactivity
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,6 +49,11 @@ import androidx.recyclerview.widget.RecyclerView
             viewHolder.heroDesc.text = hero.description
             viewHolder.layout.setOnClickListener {
                 Toast.makeText(it.context, "Hi, you clicked on ${hero.name}", Toast.LENGTH_SHORT).show()
+                val context = viewHolder.layout.context
+                val heroDetailIntent = Intent(context, HeroesDetailActivity::class.java).apply{
+                    putExtra(HeroesDetailActivity.EXTRA_HERO, hero)
+                }
+                context.startActivity(heroDetailIntent)
             }
         }
 
